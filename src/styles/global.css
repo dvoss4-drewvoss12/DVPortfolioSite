@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+  /* Define your custom Nord palette */
+  --color-nord-darkest: #2E3440;
+  --color-nord-dark: #3B4252;
+  --color-nord-border: #4C566A;
+  --color-nord-snow: #ECEFF4;
+  --color-nord-ice: #D8DEE9;
+  --color-nord-frost: #88C0D0;
+}
