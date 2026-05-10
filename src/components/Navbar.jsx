@@ -18,8 +18,6 @@ export default function Navbar() {
           
           <div 
             className = "relative"
-            onMouseEnter = {() => setIsDropdownOpen(true)}
-            onMouseLeave = {() => setIsDropdownOpen(false)}
           >
             <button 
               className = "text-nord-ice font-medium hover:text-nord-frost transition-colors flex items-center gap-1"
