@@ -1,9 +1,8 @@
 ---
 import '../styles/global.css';
 import Navbar from '../components/Navbar.jsx';
+import Footer from '../components/Footer.jsx'
 import ProjectCard from '../components/ProjectCard.jsx';
-
-const currentYear = new Date().getFullYear();
 ---
 
 <html lang = "en">
@@ -47,7 +46,7 @@ const currentYear = new Date().getFullYear();
             title = "Garage Tracker" 
             description = "This is a garage tracker application I made with AI assistance for my CS571 class. I chose to create this with AI as it was recommended by the class, and I wanted to see what choices the AI would make. I plan to turn this into a locally hosted site with a backend." 
             tech = {["React", "React Bootstrap", "JSX/JavaScript", "Google Gemini"]} 
-            link = "/projects/cs571" 
+            link = "/projects/garagetracker" 
           />
           <ProjectCard 
             title = "Self-Hosted Portfolio" 
@@ -58,21 +57,6 @@ const currentYear = new Date().getFullYear();
         </div>
       </section>
     </main>
-
-    <footer class = "border-t border-nord-border bg-nord-dark py-8 mt-12">
-      <div class = "max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-nord-ice">
-        <p>&copy; {currentYear} Drew Voss.</p>
-        
-        <div class = "flex gap-6">
-          <a href = "https://github.com/dvoss4-drewvoss12" target="_blank" rel="noopener noreferrer" class = "hover:text-nord-frost transition-colors">
-            GitHub
-          </a>
-          <a href = "https://www.linkedin.com/in/dvoss4/" target="_blank" rel="noopener noreferrer" class = "hover:text-nord-frost transition-colors">
-            LinkedIn
-          </a>
-        </div>
-      </div>
-    </footer>
-
+    <Footer client:load/>
   </body>
 </html>
