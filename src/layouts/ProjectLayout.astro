@@ -1,27 +1,93 @@
 ---
-import Navbar from '../components/Navbar.jsx';
-import Footer from '../components/Footer.jsx';
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
+import { Image } from "astro:assets";
 const { title, techStack, images, description } = Astro.props;
 ---
 
 <html lang="en">
-    <head>
-        <title>{title} | Drew Voss</title>
-    </head>
-    <body class = "bg-nord-darkest text-nord-ice min-h-screen font-sans">
-        <Navbar client:load/>
+  <head>
+    <title>{title} | Drew Voss</title>
+  </head>
+  <body class="bg-nord-darkest text-nord-ice min-h-screen font-sans">
+    <Navbar client:load />
+    <main>
+      <article>
+        <header class="mb-12">
+          <h1 class="text-4xl font-extrabold text-nord-snow mb-8">{title}</h1>
+          <div
+            class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 h-125"
+          >
+            <div
+              class="md:col-span-3 md:row-span-3 bg-nord-dark rounded-xl overflow-hidden border border-nord-border"
+            >
+              <Image src={images[0]} alt="" />
+            </div>
 
-
-
-    </body>
-
-
-
-
-
-
-
-
-
-
+            <div
+              class="md:col-span-1 md:row-span-1 bg-nord-dark rounded-xl overflow-hidden border border-nord-border"
+            >
+              <Image src={images[1]} alt="" />
+            </div>
+            <div
+              class="md:col-span-1 md:row-span-1 bg-nord-dark rounded-xl overflow-hidden border border-nord-border"
+            >
+              <Image src={images[1]} alt="" />
+            </div>
+            <div
+              class="md:col-span-1 md:row-span-1 bg-nord-dark rounded-xl overflow-hidden border border-nord-border"
+            >
+              <Image src={images[1]} alt="" />
+            </div>
+          </div>
+          <div class="flex flex-col gap-16 mt-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <section
+                class="md:col-span-2 border border-nord-border rounded-xl"
+              >
+                <h2
+                  class="text-2xl font-bold text-nord-snow border-b border-nord-border/50 pb-2 p-6 mb-4"
+                >
+                  Description
+                </h2>
+                <div
+                  class="text-nord-ice leading-relaxed max-w-prose space-y-4"
+                >
+                  <slot />
+                </div>
+              </section>
+              <aside
+                class="md:col-span-1 bg-nord-dark p-6 rounded-xl border border-nord-border h-fit sticky top-8"
+              >
+                <h3
+                  class="text-2xl font-bold text-nord-snow mb-4 border-b border-nord-border pb-2"
+                >
+                  Tech Stack
+                </h3>
+                <div class="flex flex-warp gap-2">
+                  <slot name="tech-stack" />
+                </div>
+              </aside>
+            </div>
+          </div>
+          <section
+            class="bg-nord-dark/50 p-8 rounded-xl border border-nord-border"
+          >
+            <h2
+              class="text-2xl font-bold text-nord-snow border-b border-nord-border/50 pb-2 mb-4"
+            >
+              Challenges
+            </h2>
+            <div class="text-nord-ice leading-relaxed space-y-4">
+              <slot name="challenges" />
+            </div>
+          </section>
+        </header>
+      </article>
+      <div
+        class="md: col-span-2 md:row-span-3 bg-nord-dark rounded-xl overflow-hidden border border-nord-border"
+      >
+      </div>
+    </main>
+  </body>
 </html>
