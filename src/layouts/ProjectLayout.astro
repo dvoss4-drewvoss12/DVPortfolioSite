@@ -4,8 +4,8 @@ import Footer from "../components/Footer.jsx";
 import { Image } from "astro:assets";
 interface Props {
   title: string;
-  tech: string[];
-  imageGallery: {
+  tech?: string[];
+  imageGallery?: {
     src: ImageMetadata;
     alt: string;
   }[];
@@ -23,47 +23,41 @@ const { title, tech = [], imageGallery = [] } = Astro.props;
       <article>
         <header class="mb-12">
           <h1 class="text-4xl font-extrabold text-nord-snow mb-8">{title}</h1>
-          <div
-            class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 h-125"
-          >
-            <div
-              class="md:col-span-3 md:row-span-3 bg-nord-dark rounded-xl overflow-hidden border border-nord-border"
-            >
-              <Image
-                src={imageGallery[0].src}
-                alt={imageGallery[1].alt}
-                class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
-              />
-            </div>
+          {
+            imageGallery.length > 0 && (
+              <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 h-125">
+                <div class="md:col-span-3 md:row-span-3 bg-nord-dark rounded-xl overflow-hidden border border-nord-border">
+                  <Image
+                    src={imageGallery[0].src}
+                    alt={imageGallery[1].alt}
+                    class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
+                  />
+                </div>
 
-            <div
-              class="md:col-span-1 md:row-span-1 bg-nord-dark rounded-xl overflow-hidden border border-nord-border"
-            >
-              <Image
-                src={imageGallery[1].src}
-                alt={imageGallery[1].alt}
-                class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
-              />
-            </div>
-            <div
-              class="md:col-span-1 md:row-span-1 bg-nord-dark rounded-xl overflow-hidden border border-nord-border"
-            >
-              <Image
-                src={imageGallery[2].src}
-                alt={imageGallery[2].alt}
-                class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
-              />
-            </div>
-            <div
-              class="md:col-span-1 md:row-span-1 bg-nord-dark rounded-xl overflow-hidden border border-nord-border"
-            >
-              <Image
-                src={imageGallery[3].src}
-                alt={imageGallery[3].alt}
-                class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
-              />
-            </div>
-          </div>
+                <div class="md:col-span-1 md:row-span-1 bg-nord-dark rounded-xl overflow-hidden border border-nord-border">
+                  <Image
+                    src={imageGallery[1].src}
+                    alt={imageGallery[1].alt}
+                    class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
+                  />
+                </div>
+                <div class="md:col-span-1 md:row-span-1 bg-nord-dark rounded-xl overflow-hidden border border-nord-border">
+                  <Image
+                    src={imageGallery[2].src}
+                    alt={imageGallery[2].alt}
+                    class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
+                  />
+                </div>
+                <div class="md:col-span-1 md:row-span-1 bg-nord-dark rounded-xl overflow-hidden border border-nord-border">
+                  <Image
+                    src={imageGallery[3].src}
+                    alt={imageGallery[3].alt}
+                    class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
+                  />
+                </div>
+              </div>
+            )
+          }
           <div class="flex flex-col gap-16 mt-16">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
               <section
@@ -119,5 +113,6 @@ const { title, tech = [], imageGallery = [] } = Astro.props;
       >
       </div>
     </main>
+    <Footer client:load />
   </body>
 </html>
