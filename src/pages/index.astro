@@ -1,62 +1,82 @@
 ---
-import '../styles/global.css';
-import Navbar from '../components/Navbar.jsx';
-import Footer from '../components/Footer.jsx'
-import ProjectCard from '../components/ProjectCard.jsx';
+import "../styles/global.css";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
+import ProjectCard from "../components/ProjectCard.jsx";
 ---
 
-<html lang = "en">
+<html lang="en">
   <head>
-    <meta charset = "utf-8" />
-    <meta name = "viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>Drew Voss | Portfolio</title>
   </head>
-  <body class = "bg-nord-darkest text-nord-ice min-h-screen font-sans selection:bg-nord-border flex flex-col">
-    
+  <body
+    class="bg-nord-darkest text-nord-ice min-h-screen font-sans selection:bg-nord-border flex flex-col"
+  >
     <Navbar client:load />
 
-    <main class = "max-w-5xl mx-auto px-6 py-20 grow w-full">
-      
-      <header class = "mb-20">
-        <h1 class = "text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-nord-snow">
-        	Drew 
-			<span class = "text-nord-frost">
-				Voss
-			</span>
+    <main class="max-w-5xl mx-auto px-6 py-20 grow w-full">
+      <header class="mb-20">
+        <h1
+          class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-nord-snow"
+        >
+          Drew
+          <span class="text-nord-frost"> Voss </span>
         </h1>
-        <p class = "text-xl md:text-2xl text-nord-ice max-w-2xl leading-relaxed">
-          Hi, I am a Computer Science student who currently works in the IT world and will be graduating in December 2026. I made this website to document some of my home projects and different things I have enjoyed making.
+        <p class="text-xl md:text-2xl text-nord-ice max-w-2xl leading-relaxed">
+          Hi, I am a Computer Science student who currently works in IT and will
+          be graduating in December 2026. I made this website to document some
+          of my home projects and different things I have enjoyed making.
         </p>
       </header>
 
       <section>
-        <h2 class = "text-3xl font-bold mb-8 flex items-center gap-3 text-nord-snow">
+        <h2
+          class="text-3xl font-bold mb-8 flex items-center gap-3 text-nord-snow"
+        >
           <span class="w-8 h-0.5 bg-nord-frost"></span>
           Featured Work
         </h2>
-        
-        <div class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <ProjectCard 
-            title = "Proxmox Homelab" 
-            description="I run a 3-node proxmox homelab high-uptime from some older technology I had around. It is actually what is currently hosting this site." 
-            tech = {["Proxmox", "LXC/VMs", "Linux", "Pi-hole", "Unbound", "Tailscale", "Docker", "PBS", "Uptime Kuma", "Homepage"]} 
-            link = "/projects/homelab" 
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ProjectCard
+            title="Proxmox Homelab"
+            description="I run a 3-node proxmox homelab high-uptime from some older technology I had around. It is actually what is currently hosting this site."
+            tech={[
+              "Proxmox",
+              "LXC/VMs",
+              "Linux",
+              "Pi-hole",
+              "Unbound",
+              "Tailscale",
+              "Docker",
+              "PBS",
+              "Uptime Kuma",
+              "Homepage",
+            ]}
+            link="/projects/homelab"
           />
-          <ProjectCard 
-            title = "Garage Tracker" 
-            description = "This is a garage tracker application I made with AI assistance for my CS571 class. I chose to create this with AI as it was recommended by the class, and I wanted to see what choices the AI would make. I plan to turn this into a locally hosted site with a backend." 
-            tech = {["React", "React Bootstrap", "JSX/JavaScript", "Google Gemini"]} 
-            link = "/projects/garagetracker" 
+          <ProjectCard
+            title="Garage Tracker"
+            description="This is a garage tracker application I made with AI assistance for my CS571 class. I chose to create this with AI as it was recommended by the class, and I wanted to see what choices the AI would make. I plan to turn this into a locally hosted site with a backend."
+            tech={[
+              "React",
+              "React Bootstrap",
+              "JSX/JavaScript",
+              "Google Gemini",
+            ]}
+            link="/projects/garagetracker"
           />
-          <ProjectCard 
-            title = "Self-Hosted Portfolio" 
-            description = "This is the site you're currently looking at. It is locally hosted on my Proxmox cluster and I made it to document my work and projects." 
-            tech = {["Astro", "Tailwind CSS", "React" ]} 
-            link = "/projects/portfolio" 
+          <ProjectCard
+            title="Self-Hosted Portfolio"
+            description="This is the site you're currently looking at. It is locally hosted on my Proxmox cluster and I made it to document my work and projects."
+            tech={["Astro", "Tailwind CSS", "React"]}
+            link="/projects/portfolio"
           />
         </div>
       </section>
     </main>
-    <Footer client:load/>
+    <Footer client:load />
   </body>
 </html>
