@@ -1,0 +1,30 @@
+---
+import "../../styles/global.css";
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import HomeLabArchitectureImage from "../../assets/homelab/HomeLabArchitecture.png";
+import UptimeKumaSummaryImage from "../../assets/homelab/UptimeKumaSummary.png";
+import ProxmoxSummaryImage from "../../assets/homelab/ProxmoxSummary.png";
+import PiHoleSummaryImage from "../../assets/homelab/PiHoleSummary.png";
+const projectImages = [
+  {
+    src: HomeLabArchitectureImage,
+    alt: "Proxmox cluster architecture map",
+  },
+  {
+    src: UptimeKumaSummaryImage,
+    alt: "Image of uptime kuma uptime list",
+  },
+  {
+    src: ProxmoxSummaryImage,
+    alt: "Image of Proxmox summary with utilization totals",
+  },
+  {
+    src: PiHoleSummaryImage,
+    alt: "Image of PiHole Summary page",
+  },
+];
+const title = "Proxmox Homelab";
+const techList = ["Proxmox", "Pihole"];
+---
+
+<ProjectLayout title={title} tech={techList} imageGallery={projectImages} />
