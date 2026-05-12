@@ -2,7 +2,7 @@
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import { Image } from "astro:assets";
-const { title, techStack, images, description } = Astro.props;
+const { title, tech = [], imageGallery = [], description } = Astro.props;
 ---
 
 <html lang="en">
@@ -21,23 +21,35 @@ const { title, techStack, images, description } = Astro.props;
             <div
               class="md:col-span-3 md:row-span-3 bg-nord-dark rounded-xl overflow-hidden border border-nord-border"
             >
-              <Image src={images[0]} alt="" />
+              <Image
+                src={imageGallery[0]}
+                alt=""
+                class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
+              />
             </div>
 
             <div
               class="md:col-span-1 md:row-span-1 bg-nord-dark rounded-xl overflow-hidden border border-nord-border"
             >
-              <Image src={images[1]} alt="" />
+              <Image src={imageGallery[1]} alt="" />
             </div>
             <div
               class="md:col-span-1 md:row-span-1 bg-nord-dark rounded-xl overflow-hidden border border-nord-border"
             >
-              <Image src={images[1]} alt="" />
+              <Image
+                src={imageGallery[1]}
+                alt=""
+                class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
+              />
             </div>
             <div
               class="md:col-span-1 md:row-span-1 bg-nord-dark rounded-xl overflow-hidden border border-nord-border"
             >
-              <Image src={images[1]} alt="" />
+              <Image
+                src={imageGallery[1]}
+                alt=""
+                class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
+              />
             </div>
           </div>
           <div class="flex flex-col gap-16 mt-16">
@@ -53,7 +65,7 @@ const { title, techStack, images, description } = Astro.props;
                 <div
                   class="text-nord-ice leading-relaxed max-w-prose space-y-4"
                 >
-                  <slot />
+                  <slot name="description" />
                 </div>
               </section>
               <aside
