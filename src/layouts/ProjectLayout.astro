@@ -2,7 +2,15 @@
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import { Image } from "astro:assets";
-const { title, tech = [], imageGallery = [], description } = Astro.props;
+interface Props {
+  title: string;
+  tech: string[];
+  imageGallery: {
+    src: ImageMetadata;
+    alt: string;
+  }[];
+}
+const { title, tech = [], imageGallery = [] } = Astro.props;
 ---
 
 <html lang="en">
@@ -81,7 +89,13 @@ const { title, tech = [], imageGallery = [], description } = Astro.props;
                   Tech Stack
                 </h3>
                 <div class="flex flex-warp gap-2">
-                  <slot name="tech-stack" />
+                  {
+                    tech.map((techItem) => (
+                      <span class="px-3 py-1 bg-nord-darkest text-nord-frost text-xs font-semibold rounded-full border border-nord-border/50">
+                        {techItem}
+                      </span>
+                    ))
+                  }
                 </div>
               </aside>
             </div>
