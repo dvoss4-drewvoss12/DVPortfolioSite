@@ -1,0 +1,22 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
+import ProjectCard from "../components/ProjectCard.jsx";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>About Me | Drew Voss</title>
+  </head>
+  <body
+    class="bg-nord-darkest text-nord-ice min-h-screen font-sans selection:bg-nord-border flex flex-col"
+  >
+    <Navbar client:load />
+
+    <main class="max-w-5xl mx-auto px-6 py-20 grow w-full"></main>
+    <Footer client:load />
+  </body>
+</html>
