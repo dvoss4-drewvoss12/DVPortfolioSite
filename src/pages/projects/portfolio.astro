@@ -1,7 +1,29 @@
 ---
 import "../../styles/global.css";
 import ProjectLayout from "../../layouts/ProjectLayout.astro";
-const title = "Portfolio Website";
+import PortfolioAccessibilityReport from "../../assets/portfolio/portfolio-accessibility-report.png";
+import PortfolioPhonePage from "../../assets/portfolio/portfolio-phone-page.png";
+import PortfolioProjectCard from "../../assets/portfolio/portfolio-project-card.png";
+import PortfolioProjectCardView from "../../assets/portfolio/portfolio-project-card-view.png";
+const title = "Portfolio Website(UNDER CONSTRUCTION)";
+const projectImages = [
+  {
+    src: PortfolioAccessibilityReport,
+    alt: "An image of the main portfolio page with the Astro audit open and the WAVE accessibility report open.",
+  },
+  {
+    src: PortfolioPhonePage,
+    alt: "An image of the main portfolio page open on a mobile device to demonstrate mobile usability.",
+  },
+  {
+    src: PortfolioProjectCard,
+    alt: "An image of the code for the project card React component, it is open in VSC.",
+  },
+  {
+    src: PortfolioProjectCardView,
+    alt: "An image of the project card that the code for the project card creates.",
+  },
+];
 ---
 
-<ProjectLayout title={title} />
+<ProjectLayout title={title} imageGallery={projectImages} />
