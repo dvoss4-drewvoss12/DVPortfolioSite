@@ -64,7 +64,7 @@ const { title, tech = [], imageGallery = [] } = Astro.props;
                 class="md:col-span-2 border border-nord-border rounded-xl"
               >
                 <h2
-                  class="text-2xl font-bold text-nord-snow border-b border-nord-border/50 pb-2 p-6 mb-4"
+                  class="text-2xl font-bold text-nord-snow border-b border-nord-border/50 pb-1 p-6 mb-2"
                 >
                   Description
                 </h2>
@@ -82,7 +82,7 @@ const { title, tech = [], imageGallery = [] } = Astro.props;
                 >
                   Tech Stack
                 </h3>
-                <div class="flex flex-warp gap-2">
+                <div class="flex flex-wrap gap-2">
                   {
                     tech.map((techItem) => (
                       <span class="px-3 py-1 bg-nord-darkest text-nord-frost text-xs font-semibold rounded-full border border-nord-border/50">
