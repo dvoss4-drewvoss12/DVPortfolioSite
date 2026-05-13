@@ -3,10 +3,51 @@ import "../../styles/global.css";
 import ProjectLayout from "../../layouts/ProjectLayout.astro";
 import GarageTrackerMainPage from "../../assets/garagetracker/garage-tracker-mainpage.png";
 import GarageTrackerVehicles from "../../assets/garagetracker/garage-tracker-vehicles.png";
+import GarageTrackerAbout from "../../assets/garagetracker/garage-tracker-about.png";
+import GarageTrackerGithub from "../../assets/garagetracker/garage-tracker-github.png";
 
-const title = "Garage Tracker(PAGE UNDER CONSTRUCTION)";
-const techList = ["React", "JavaScript", "Gemini"];
-const projectImages = {};
+const title = "Garage Tracker";
+const techList = ["React", "React Bootstrap", "JavaScript", "Gemini"];
+const projectImages = [
+  {
+    src: GarageTrackerMainPage,
+    alt: "Picture of the Garage Tracker main page, which has a basic dashboard of information about the user's vehicles and buttons to navigate to other locations.",
+  },
+  {
+    src: GarageTrackerVehicles,
+    alt: "Picture of the Garage Tracker vehicles page, which has multiple vehicles, a search function, and a dialogue box to add more vehicles.",
+  },
+  {
+    src: GarageTrackerAbout,
+    alt: "Picture of the Garage Tracker about page, which includes a description of some features, info about the creator, and an AI disclaimer.",
+  },
+  {
+    src: GarageTrackerGithub,
+    alt: "Picture of the Github page for Garage Tracker, complete with ReadMe.",
+  },
+];
 ---
 
-<ProjectLayout title={title} />
+<ProjectLayout title={title} tech={techList} imageGallery={projectImages}>
+  <p slot="description" class="p-6 mb-0 text-nord-snow">
+    This site is a garage tracker, it allows a user to keep track of the
+    vehicle(s) they own, their maintenance, and their modifications. I made this
+    because I was dissatisfied with the options I have tried for vehicle
+    tracking, as I found they tended to overwrite the data I input and it made
+    it hard to create consistent records. This site is supposed to fix those
+    problems. It is largely written by Gemini AI, and was created for my CS571
+    class. I have extensively used React and this also served as a test to see
+    how viable AI is for this purpose. I manually made a lot of the
+    accessibility changes and will be creating the backend soon.
+  </p>
+  <!-- I need to change some of my formatting here so I don't have to do this weird 0.5 padding to keep spacing consistent -->
+  <p slot="challenges" class="p-0.5 text-nord-snow">
+    The challenge I ran into and am still trying to solve is user storage and
+    accounts. Currently, my implementation uses localstorage, and it works
+    decently if the user only uses one device and does not clear their browser
+    data often, but it runs into issues if they want to use multiple devices. I
+    am planning to solve this by hosting a backend database on my network to
+    support this site. I would like to make it available for some level of
+    public use.
+  </p>
+</ProjectLayout>
