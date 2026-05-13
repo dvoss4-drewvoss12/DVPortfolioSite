@@ -24,7 +24,41 @@ const projectImages = [
   },
 ];
 const title = "Proxmox Homelab";
-const techList = ["Proxmox", "Pihole"];
+const techList = [
+  "Proxmox",
+  "Pihole",
+  "Uptime Kuma",
+  "Homepage",
+  "Unbound",
+  "Nginx",
+  "OpenVaultWarden",
+  "Docker",
+];
 ---
 
-<ProjectLayout title={title} tech={techList} imageGallery={projectImages} />
+<ProjectLayout title={title} tech={techList} imageGallery={projectImages}>
+  <p slot="description" class="p-6 mb-0 text-nord-snow">
+    This is my homelab, I have spent quite some time setting everything up
+    across three nodes. It is on my home network, of course, and everything is
+    set up through tailscale, so I can access systems outside of my home. A lot
+    of it focuses on web security and self-hosting services that I find to be
+    useful. It also has 2FA setup which requires a physical component, which I
+    will not disclose the details of in the interest of security.
+  </p>
+  <p slot="description" class="p-6 text-nord-snow">
+    The first image is a map of my homelab, which illustrates the way everything
+    connects together. Most things on the lab also use my own DNS servers with
+    unbound, and I have both a primary DNS and a secondary DNS which filter
+    through Pi-Hole. I am quite proud of this architecture and hope to add more
+    to it soon, as it is currently hosted off three laptops in my living room
+  </p>
+  <p slot="challenges" class="p-0.5 text-nord-snow mb-0">
+    My primary challenge has been uptime, as I noted above, I have this hosted
+    in my living room with three laptop nodes. To combat this, I have set up
+    redundancy, so my two higher-uptime devices have enough votes to retain
+    quorom, and I have set up wake-on-lan for my devices which are capable of
+    it. I also have an access method for all of my proxmox nodes, in case one
+    goes down, I can get into another to try to get the crashed node back up.
+  </p>
+  <p slot="challenges" class="p-0.5 text-nord-snow"></p>
+</ProjectLayout>/
