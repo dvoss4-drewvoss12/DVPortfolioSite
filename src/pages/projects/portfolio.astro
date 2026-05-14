@@ -5,7 +5,8 @@ import PortfolioAccessibilityReport from "../../assets/portfolio/portfolio-acces
 import PortfolioPhonePage from "../../assets/portfolio/portfolio-phone-page.png";
 import PortfolioProjectCard from "../../assets/portfolio/portfolio-project-card.png";
 import PortfolioProjectCardView from "../../assets/portfolio/portfolio-project-card-view.png";
-const title = "Portfolio Website(UNDER CONSTRUCTION)";
+const title = "Portfolio Website";
+const techList = [];
 const projectImages = [
   {
     src: PortfolioAccessibilityReport,
@@ -26,4 +27,47 @@ const projectImages = [
 ];
 ---
 
-<ProjectLayout title={title} imageGallery={projectImages} />
+<ProjectLayout title={title} tech={techList} imageGallery={projectImages}>
+  <p slot="description" class="p-6 mb-0 text-nord-snow">
+    This is a meta-page about the site you are currently looking at, it is a
+    personal website, which I have been meaning to make for a while but
+    struggled to find the time and to choose a framework. I eventually settled
+    on using Astro for the site, as I thought it would be good to learn a new
+    framework while I built the site, and I chose to locally host it, as I now
+    have the infrastructure to do so. I enjoyed the process of choosing a domain
+    and getting the site hosted, and while it is not perfect, I am proud of what
+    I built here, and I think it does a good job of demonstrating my abilities.
+  </p>
+  <p slot="description" class="p-6 text-nord-snow">
+    As stated above, this site is built with Astro, so HTML, JS, CSS(Tailwind in
+    this case), some React, and some TypeScript. There are a lot of
+    intersections here, and I have really enjoyed learning to code in Astro. I
+    love the ability to make layouts that I can edit and perfect with HTML code,
+    and I would like to make more projects with Astro in the future. I've also
+    learned (to some degree) some other tools while building this site, like
+    Mermaid.js to make the graph on the Proxmox page.
+  </p>
+  <p slot="challenges" class="p-6 text-nord-snow mb-0">
+    My main challenge here was figuring out how to learn Astro, while I thought
+    it was quite similar to React and other things I have used in the past, I
+    wasn't quite sure where to start. I tried watching tutorials online and I
+    tried asking AI some questions to learn, but neither worked well for me. I
+    also had only used Tailwind for one site before this, so it took me a bit to
+    get into both. In the end, I actually found that reading documentation
+    worked the best for me, as I already had a decent foundation in web-dev, I
+    also used AI to a minor degree for this site to work on the initial color
+    scheme and navbar so I had a basis to get started. From there, I referenced
+    documentation and learned everything I could to create this site in my
+    vision.
+  </p>
+  <p slot="improvements" class="p-6 text-nord-snow">
+    Aside from the obvious, like working on more projects and adding them here,
+    I would like to refactor the home page once I add more projects, as it is
+    currently built for 3-4 projects, but I want to work on many different
+    things. I thought it was best to start with simplicity though, so I have
+    something to show, instead of a lot of ideas but no implementation. I also
+    want to add some other aspects of myself that are not projects, like 3D
+    printing and modeling, electronics repair / soldering work, etc, because I
+    feel they should have a place here.
+  </p>
+</ProjectLayout>
