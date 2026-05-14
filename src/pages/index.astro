@@ -44,19 +44,20 @@ import ProjectCard from "../components/ProjectCard.jsx";
           <ProjectCard
             title="Proxmox Homelab"
             description="I run a 3-node proxmox homelab high-uptime from some older technology I had around. It is actually what is currently hosting this site."
-            tech={[
-              "Proxmox",
-              "LXC/VMs",
-              "Linux",
-              "Pi-hole",
-              "Unbound",
-              "Tailscale",
-              "Docker",
-              "PBS",
-              "Uptime Kuma",
-              "Homepage",
-            ]}
+            tech={["Proxmox VE", "Docker", "Tailscale", "Nginx Proxy", "..."]}
             link="/projects/homelab"
+          />
+          <ProjectCard
+            title="Self-Hosted Portfolio"
+            description="This is the site you're currently looking at. It is locally hosted on my Proxmox cluster and I made it to document my work and projects."
+            tech={[
+              "Self-Hosted",
+              "Astro Framework",
+              "Tailwind CSS",
+              "Cloudflare",
+              "...",
+            ]}
+            link="/projects/portfolio"
           />
           <ProjectCard
             title="Garage Tracker"
@@ -64,16 +65,11 @@ import ProjectCard from "../components/ProjectCard.jsx";
             tech={[
               "React",
               "React Bootstrap",
-              "JSX/JavaScript",
+              "JavaScript",
               "Google Gemini",
+              "...",
             ]}
             link="/projects/garagetracker"
-          />
-          <ProjectCard
-            title="Self-Hosted Portfolio"
-            description="This is the site you're currently looking at. It is locally hosted on my Proxmox cluster and I made it to document my work and projects."
-            tech={["Astro", "Tailwind CSS", "React"]}
-            link="/projects/portfolio"
           />
         </div>
       </section>
