@@ -49,7 +49,7 @@ export default function Navbar() {
                   href="/projects/homelab"
                   className="block px-4 py-2 text-sm text-nord-ice hover:bg-nord-border hover:text-nord-snow transition-colors"
                 >
-                  3-Node Proxmox Cluster
+                  Proxmox Cluster
                 </a>
                 <a
                   href="/projects/garagetracker"
