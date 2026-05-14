@@ -16,6 +16,7 @@ const { title, tech = [], imageGallery = [] } = Astro.props;
 <html lang="en">
   <head>
     <title>{title} | Drew Voss</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
   </head>
   <body class="bg-nord-darkest text-nord-ice min-h-screen font-sans">
     <Navbar client:load />
