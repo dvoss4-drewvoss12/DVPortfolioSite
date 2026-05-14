@@ -6,6 +6,16 @@ import UptimeKumaSummaryImage from "../../assets/homelab/uptimekuma-summary.png"
 import ProxmoxSummaryImage from "../../assets/homelab/proxmox-summary.png";
 import PiHoleSummaryImage from "../../assets/homelab/pihole-summary.png";
 const title = "Proxmox Homelab";
+const techList = [
+  "Proxmox",
+  "Pihole",
+  "Uptime Kuma",
+  "Homepage",
+  "Unbound",
+  "Nginx",
+  "OpenVaultWarden",
+  "Docker",
+];
 const projectImages = [
   {
     src: HomeLabArchitectureImage,
@@ -23,16 +33,6 @@ const projectImages = [
     src: PiHoleSummaryImage,
     alt: "Image of PiHole Summary page",
   },
-];
-const techList = [
-  "Proxmox",
-  "Pihole",
-  "Uptime Kuma",
-  "Homepage",
-  "Unbound",
-  "Nginx",
-  "OpenVaultWarden",
-  "Docker",
 ];
 ---
 
@@ -60,5 +60,21 @@ const techList = [
     it. I also have an access method for all of my proxmox nodes, in case one
     goes down, I can get into another to try to get the crashed node back up.
   </p>
-  <p slot="challenges" class="p-6 text-nord-snow"></p>
+  <p slot="challenges" class="p-6 text-nord-snow">
+    I also ran into some issues when I initially set up back ups for the
+    servers, I did them nightly through Proxmox's vzdump feature, which very
+    quickly filled my 2TB NAS SSD. Additionally, one of my devices kept crashing
+    as it would attempt to back up for hours on end and eventually timeout. I
+    partially resolved this by instituting Proxmox Backup Server and making that
+    my nightly backup service, so my backups are more dynamic and only new data
+    gets added to them, this has resolved the crashing issue. I still need to
+    increase my local storage and institute some more data retention rules to
+    prevent storing very old data, but I have made progress here.
+  </p>
+  <p slot="improvements" class="p-6 text-nord-snow">
+    I would like to separate my nginx and webpage containers to make
+    troubleshooting easier. I also plan to move my website hosting to a more
+    reliable desktop as soon as possible. I also want to setup a router where I
+    am able to control more aspects of my network.
+  </p>
 </ProjectLayout>/
