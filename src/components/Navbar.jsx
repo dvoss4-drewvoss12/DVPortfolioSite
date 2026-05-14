@@ -61,7 +61,7 @@ export default function Navbar() {
                   href="/projects/portfolio"
                   className="block px-4 py-2 text-sm text-nord-ice hover:bg-nord-border hover:text-nord-snow transition-colors"
                 >
-                  Portfolio Website (Self-Hosted)
+                  Self-Hosted Portfolio Website
                 </a>
               </div>
             )}
