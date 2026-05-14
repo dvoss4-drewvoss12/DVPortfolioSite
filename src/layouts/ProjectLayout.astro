@@ -16,7 +16,7 @@ const { title, tech = [], imageGallery = [] } = Astro.props;
 <html lang="en">
   <head>
     <title>{title} | Drew Voss</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body class="bg-nord-darkest text-nord-ice min-h-screen font-sans">
     <Navbar client:load />
@@ -105,6 +105,18 @@ const { title, tech = [], imageGallery = [] } = Astro.props;
             </h2>
             <div class="text-nord-ice leading-relaxed max-w-6xl space-y-4">
               <slot name="challenges" />
+            </div>
+          </section>
+          <section
+            class="bg-nord-dark/50 p-6 rounded-xl border border-nord-border mt-6"
+          >
+            <h2
+              class="text-2xl font-bold text-nord-snow border-b border-nord-border/50 pb-2"
+            >
+              Planned Improvements
+            </h2>
+            <div class="text-nord-ice leading-relaxed max-w-6xl space-y-4">
+              <slot name="improvements" />
             </div>
           </section>
         </header>
