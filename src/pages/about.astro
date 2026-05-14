@@ -3,6 +3,8 @@ import "../styles/global.css";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import ProjectCard from "../components/ProjectCard.jsx";
+import { Image } from "astro:assets";
+import AuthorImage from "../assets/about/AuthorImage.png";
 ---
 
 <html lang="en">
@@ -17,7 +19,72 @@ import ProjectCard from "../components/ProjectCard.jsx";
   >
     <Navbar client:load />
 
-    <main class="max-w-5xl mx-auto px-6 py-20 grow w-full"></main>
+    <main
+      class="max-w-6xl mx-auto p-8 grid grid-cols-1 md:grid-cols-10 gap-8 text-nord-snow"
+    >
+      <aside
+        class="md: col-span-4 bg-nord-dark rounded mb-6 items-center justify-center"
+      >
+        <div
+          class="aspect-square bg-nord-border rounded mb-2 items-center justify-center"
+        >
+          <Image
+            src={AuthorImage}
+            alt="Image of the author standing down the hill from the capital of Wisconsin, in Madison, WI."
+          />
+        </div>
+        <div>
+          <ul class="space-y-3 mb-6 p-4">
+            <li><strong>Location: Madison, WI</strong></li>
+            <li>
+              <strong
+                >Education: Graduating from UW-Madison w/ CS degree in December
+                2026</strong
+              >
+            </li>
+            <li>
+              <strong>Current Position: IT Co-op at J.H. Findorff & Son</strong>
+            </li>
+            <h3 class="font-bold border-b border-nord-border pb-2 mb-3">
+              Current Projects:
+            </h3>
+            <ul
+              class="space-y-1 list-disc list-inside text-sm text-nord-snow p-4"
+            >
+              <li>Proxmox Homelab</li>
+              <li>Garage Tracker</li>
+              <li>Portfolio Site</li>
+            </ul>
+          </ul>
+        </div>
+      </aside>
+      <section class="md: col-span-6 p-8 space-y-8">
+        <div>
+          <h2 class="text-3xl font-bold text-nord-snow mb-4">Who I Am</h2>
+          <p class="text-lg text-nord-ice leading-relaxed">
+            Hi! I am currently a computer science student at UW-Madison, and I
+            will be graduating in December 2026. I've always loved to understand
+            how things work, and I like to program, but I also like to work on
+            electronics and cars, and various other things that let me work with
+            my hands. I love to learn new things and I always try to be learning
+            no matter what I am doing. I have worked in IT for quite some time
+            now, but I also have a lot of exposure to software engineering and
+            enjoy both.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-semibold text-nord-snow mb-3">
+            Professional Experience
+          </h3>
+          <p class="text-lg text-nord-ice leading-relaxed">
+            I currently work at Findorff as an IT Co-op, where I work on
+            automating processes through Powershell and Python scripting, as
+            well as making auditing applications and similar. I also do normal
+            helpdesk tickets and software / hardware troubleshooting.
+          </p>
+        </div>
+      </section>
+    </main>
     <Footer client:load />
   </body>
 </html>
