@@ -71,7 +71,7 @@ export default function Navbar() {
             href="/about"
             className="text-nord-ice font-medium hover:text-nord-frost transition-colors"
           >
-            About
+            About Me
           </a>
         </div>
       </div>
