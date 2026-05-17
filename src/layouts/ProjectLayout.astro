@@ -30,8 +30,8 @@ const { title, tech = [], imageGallery = [] } = Astro.props;
                 <div class="md:col-span-3 md:row-span-3 bg-nord-dark rounded-xl overflow-hidden border border-nord-border">
                   <Image
                     src={imageGallery[0].src}
-                    alt={imageGallery[1].alt}
-                    class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
+                    alt={imageGallery[0].alt}
+                    class="imageZoom w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
                   />
                 </div>
 
@@ -39,21 +39,21 @@ const { title, tech = [], imageGallery = [] } = Astro.props;
                   <Image
                     src={imageGallery[1].src}
                     alt={imageGallery[1].alt}
-                    class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
+                    class="imageZoom w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
                   />
                 </div>
                 <div class="md:col-span-1 md:row-span-1 bg-nord-dark rounded-xl overflow-hidden border border-nord-border">
                   <Image
                     src={imageGallery[2].src}
                     alt={imageGallery[2].alt}
-                    class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
+                    class="imageZoom w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
                   />
                 </div>
                 <div class="md:col-span-1 md:row-span-1 bg-nord-dark rounded-xl overflow-hidden border border-nord-border">
                   <Image
                     src={imageGallery[3].src}
                     alt={imageGallery[3].alt}
-                    class="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
+                    class="imageZoom w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-300 gallery-image"
                   />
                 </div>
               </div>
@@ -128,4 +128,14 @@ const { title, tech = [], imageGallery = [] } = Astro.props;
     </main>
     <Footer client:load />
   </body>
+  <script>
+    import mediumZoom from "medium-zoom";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      mediumZoom(".imageZoom", {
+        margin: 48,
+        background: "#2e3440",
+      });
+    });
+  </script>
 </html>
