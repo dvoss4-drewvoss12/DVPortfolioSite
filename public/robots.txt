@@ -1,0 +1,4 @@
+User-agent *
+Allow: /
+
+Sitemap: https://drewvoss.dev/sitemap-index.xml
