@@ -63,6 +63,12 @@ export default function Navbar() {
                 >
                   Self-Hosted Portfolio Website
                 </a>
+                <a
+                  href="/projects/scooterfirmware"
+                  className="block px-4 py-2 text-sm text-nord-ice hover: bg-nord-border hover:text-nord-snow transition-colors"
+                >
+                  Custom firmware on Segway Ninebot G30LP
+                </a>
               </div>
             )}
           </div>
