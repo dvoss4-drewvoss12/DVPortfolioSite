@@ -1,0 +1,83 @@
+---
+import "../../styles/global.css";
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import DeskSetup from "../../assets/scooterfirmware/desk-setup.png";
+import SegwayNinebotG30 from "../../assets/scooterfirmware/segway-ninebot-g30.png";
+import ScooterHackingInfo from "../../assets/scooterfirmware/scooter-hacking-info.png";
+import ScooterHackingConfig from "../../assets/scooterfirmware/scooter-hacking-config.png";
+
+const title = "Custom Firmware Flashing";
+const techList = [
+  "ST-Link V2",
+  "Hardware Firmware Flashing",
+  "PCB Soldering",
+  "Firmware Deployment",
+  "ScooterHacking Reflasher",
+  "ScooterHacking Utility",
+  "BLE Configuration",
+];
+const projectImages = [
+  {
+    src: DeskSetup,
+    alt: "Picture of a particleboard desk with multiple items related to firmware flashing on it. There is a Pinecil soldering iron to the center left, a USB hub with a ST-Link V2 plugged in to the upper-left, and a scooter controller board in the center, which is wired to the ST-Link. There is also solder and iFixIt tools to the center-right.",
+  },
+  {
+    src: SegwayNinebotG30,
+    alt: "Picture of a Segway Ninebot G30LP in a hallway with a white wall in the background, with brown wood detailing at the bottom of the wall, and a simple wooden floor. The G30LP has a bag attached to the front and is positioned diagonally.",
+  },
+  {
+    src: ScooterHackingInfo,
+    alt: "Screenshot of the Scooter Hacking app on a phone. It is open to the info tab, which contains basic info about the scooter, including the model, BLE, SHFW, BMS, serial number, ESC region, and any error codes. It also has the app version and the scooter name.",
+  },
+  {
+    src: ScooterHackingConfig,
+    alt: "Screenshot of the Scooter Hacking app on a phone. It is open to the config tab, which contains configuration info about the scooter, it is on the expert view mode, and a profile labelled standard is open. There is various throttle settings and options to change profiles on the page as well.",
+  },
+];
+---
+
+<ProjectLayout title={title} tech={techList} imageGallery={projectImages}>
+  <p slot="description" class="p-6 mb-0 text-nord-snow">
+    This is my Segway G30LP, I purchased it refurbished and it came with the
+    newest firmware, which I was not able to modify. I wanted to make my own
+    theft protection profiles and change the throttle tuning, so I chose to
+    flash the firmware back to an older version
+  </p>
+  <p slot="description" class="p-6 text-nord-snow">
+    This process was involved, I had to remove the base deck cover from the
+    scooter, remove the controller from power and remove all of its connectors.
+    After doing that, I brought it to my desk and soldered wires to the board,
+    connecting those wires to my ST-Linker, which I had connected to my laptop.
+    Once I had the wires soldered and the board was receiving power, I used the
+    ScooterHacking ReFlasher to flash the older firmware to the board. After
+    that, I reinstalled the board and was able to modify the scooter with the
+    scooter hacking application.
+  </p>
+  <p slot="challenges" class="p-6 text-nord-snow">
+    This project was my first time soldering directly to a board in multiple
+    years, and at first I was confident in my ability to do it correctly. My
+    main challenge was finding the proper amount of force to use to break the
+    coating on the board so that I could solder to it. It took me a while before
+    I chose to use the IFixIt Black Stick and some heat from the soldering iron.
+    I chose this combo as the Black Stick is glass-filled nylon and allowed me
+    precision so I would not risk breaking the board. Once I got past this, most
+    of the process went smoothly, though I chose to tape down my wires for extra
+    security while doing the actual flashing, the reinstall was quite simple.
+  </p>
+  <p slot="challenges" class="p-6 text-nord-snow">
+    I would like to acknowledge the guide that I used to get a lot of this done,
+    and I believe it would have been much more difficult without this guide: <a
+      href="https://joeybabcock.me/blog/stlink/how-to-stlink-ninebot-max-g30-gen-2-at32-esc-fixes-bricked-or-updated-controllers/"
+      >Joey Babcok's "How to STLink Ninebot Max G30 Gen 2 AT32 ESC"</a
+    >
+  </p>
+  <p slot="improvements" class="p-6 text-nord-snow">
+    I am planning to replace the battery in my G30LP with a larger capacity
+    battery, I was originally going to use a 48V battery, but I do not want to
+    make the scooter dangerously fast, so I am instead choosing to simply
+    replace it with a higher capacity battery for better range. I will be using
+    the scooter hacking app to properly tune the BMS for this. I also want to
+    upgrade the suspension and some other mechanical parts, though that will
+    come later.
+  </p>
+</ProjectLayout>
